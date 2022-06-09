@@ -1,7 +1,5 @@
 package com.ncinga.backend.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import com.ncinga.backend.models.Template;
 import com.ncinga.backend.repositories.TemplateRepository;
 import lombok.SneakyThrows;
@@ -16,7 +14,6 @@ public class TemplateServiceImpl implements TemplateService {
     @Autowired
     TemplateRepository templateRepository;
 
-    ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
     @Override
     public List<Template> getAllTemplates() {
         return this.templateRepository.findAll();

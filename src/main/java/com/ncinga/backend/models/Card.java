@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
-import java.util.Map;
 
 @Document(collection = "cards")
 @Data
@@ -15,6 +14,6 @@ public class Card {
     String description;
     String timeDuration;
     String parentCard;
-    List<Map<String, String>> attributes;
+    List<Attribute> attributes;
     String role;
 }

@@ -1,6 +1,5 @@
 package com.ncinga.backend.controllers;
 
-import com.ncinga.backend.models.ResponseMessage;
 import com.ncinga.backend.models.Template;
 import com.ncinga.backend.services.TemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import java.util.List;
 public class TemplateController {
 
     @Autowired
-    TemplateService templateService;
+    private TemplateService templateService;
 
     @GetMapping("/templates")
     public ResponseEntity<List<Template>> getAllTemplates() {
