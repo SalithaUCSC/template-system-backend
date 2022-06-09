@@ -22,7 +22,7 @@ public class TemplateController {
     }
 
     @PostMapping("/templates")
-    public ResponseEntity<ResponseMessage> saveTemplate(@RequestBody Template template) {
+    public ResponseEntity<Template> saveTemplate(@RequestBody Template template) {
         return ResponseEntity.ok().body(templateService.saveTemplate(template));
     }
 
