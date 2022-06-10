@@ -1,5 +1,6 @@
 package com.ncinga.backend.models;
 
+import com.ncinga.backend.dtos.CardLinkedList;
 import lombok.*;
 import lombok.extern.jackson.Jacksonized;
 import org.springframework.data.annotation.Id;
@@ -19,6 +20,5 @@ public class Template {
     @Id String id;
     @NonNull String name;
     @NonNull String description;
-    @Builder.Default
-    List<Card> cards = new ArrayList<>();
+    CardLinkedList cards;
 }

@@ -10,5 +10,6 @@ import lombok.extern.jackson.Jacksonized;
 @Data
 public class CardRequestDTO {
     String templateId;
+    String cardPosition;
     Card card;
 }
