@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.6</version>
+            <version>1.6.8</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,6 +76,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>template-system-backend</finalName>
     </build>
 
 </project>
