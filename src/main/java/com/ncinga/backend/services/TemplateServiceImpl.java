@@ -27,12 +27,8 @@ public class TemplateServiceImpl implements TemplateService {
 
     @Override
     public Template getTemplateById(String id) {
-        Optional<Template> template = templateRepository.findById(id);
-        if (template.isPresent()) {
-            return template.get();
-        } else {
-            throw new TemplateNotFoundException("Template is Not Found with ID: " + id);
-        }
+        return templateRepository.findById(id)
+                .orElseThrow(() -> new TemplateNotFoundException("Template is Not Found with ID: " + id));
     }
 
     @Override
@@ -44,4 +40,18 @@ public class TemplateServiceImpl implements TemplateService {
             throw new TemplateNotFoundException("Templates are Not Found with Name: " + name);
         }
     }
+
+    @Override
+    public void updateTemplate(Template template) {
+        Template templateFound = getTemplateById(template.getId());
+        if (templateFound != null) {
+            templateRepository.save(template);
+        }
+    }
+
+    @Override
+    public void deleteTemplate(String id) {
+        templateRepository.deleteById(id);
+    }
+
 }

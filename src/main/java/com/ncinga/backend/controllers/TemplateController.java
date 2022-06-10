@@ -9,30 +9,40 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/templates")
 public class TemplateController {
 
     @Autowired
     private TemplateService templateService;
 
-    @GetMapping("/templates")
+    @GetMapping("")
     public ResponseEntity<List<Template>> getAllTemplates() {
         return ResponseEntity.ok().body(templateService.getAllTemplates());
     }
 
-    @GetMapping("/templates/name/{name}")
+    @GetMapping("/name/{name}")
     public ResponseEntity<List<Template>> getTemplateByName(@PathVariable String name) {
         return ResponseEntity.ok().body(templateService.getTemplatesByName(name));
     }
 
-    @GetMapping("/templates/id/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Template> getTemplateById(@PathVariable String id) {
         return ResponseEntity.ok().body(templateService.getTemplateById(id));
     }
 
-    @PostMapping("/templates")
+    @PostMapping("")
     public ResponseEntity<Template> saveTemplate(@RequestBody Template template) {
         return ResponseEntity.ok().body(templateService.saveTemplate(template));
+    }
+
+    @PutMapping("/update")
+    public void updateTemplate(@RequestBody Template template) {
+        templateService.updateTemplate(template);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteTemplate(@PathVariable String id) {
+        templateService.deleteTemplate(id);
     }
 
 }

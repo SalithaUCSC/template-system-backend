@@ -9,5 +9,7 @@ public interface TemplateService {
     Template saveTemplate(Template template);
     Template getTemplateById(String id);
     List<Template> getTemplatesByName(String name);
+    void deleteTemplate(String id);
+    void updateTemplate(Template template);
 
 }
