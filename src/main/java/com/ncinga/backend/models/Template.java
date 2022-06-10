@@ -1,13 +1,11 @@
 package com.ncinga.backend.models;
 
-import com.ncinga.backend.dtos.CardLinkedList;
 import lombok.*;
 import lombok.extern.jackson.Jacksonized;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 @Document(collection = "templates")
 @Data
@@ -20,5 +18,6 @@ public class Template {
     @Id String id;
     @NonNull String name;
     @NonNull String description;
-    CardLinkedList cards;
+    @Builder.Default
+    LinkedList<Card> cards = new LinkedList<>();
 }
