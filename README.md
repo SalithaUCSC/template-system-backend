@@ -6,3 +6,6 @@ Link: http://localhost:9000/swagger-ui/index.html?configUrl=/workflow-db
 
 ### Open API Docs
 Link: http://localhost:9000/workflow-db
+
+### Actuator Endpoints
+Link: http://localhost:9000/admin
