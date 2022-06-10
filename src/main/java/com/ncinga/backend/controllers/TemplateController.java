@@ -20,6 +20,16 @@ public class TemplateController {
         return ResponseEntity.ok().body(templateService.getAllTemplates());
     }
 
+    @GetMapping("/templates/name/{name}")
+    public ResponseEntity<List<Template>> getTemplateByName(@PathVariable String name) {
+        return ResponseEntity.ok().body(templateService.getTemplatesByName(name));
+    }
+
+    @GetMapping("/templates/id/{id}")
+    public ResponseEntity<Template> getTemplateById(@PathVariable String id) {
+        return ResponseEntity.ok().body(templateService.getTemplateById(id));
+    }
+
     @PostMapping("/templates")
     public ResponseEntity<Template> saveTemplate(@RequestBody Template template) {
         return ResponseEntity.ok().body(templateService.saveTemplate(template));

@@ -7,4 +7,7 @@ import java.util.List;
 public interface TemplateService {
     List<Template> getAllTemplates();
     Template saveTemplate(Template template);
+    Template getTemplateById(String id);
+    List<Template> getTemplatesByName(String name);
+
 }
