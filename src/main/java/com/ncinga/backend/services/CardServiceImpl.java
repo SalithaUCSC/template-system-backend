@@ -63,7 +63,10 @@ public class CardServiceImpl implements CardService {
         } else {
             int cardPosition = Integer.parseInt(cardPositionStr);
             if (cardPosition == 0) {
+                newCard.setId(cardPosition + 1);
+                newCard.setParentId(null);
                 cardsInTemplate.addFirst(newCard);
+                switchCardNodes(cardsInTemplate, cardPosition, cardsInTemplate.size());
             } else if (cardPosition < 0 || cardPosition >= cardsInTemplate.size()) {
                 throw new RuntimeException("Invalid Index For Template Card: " + cardPositionStr);
             } else if (cardPosition == cardsInTemplate.size() - 1) {
@@ -73,12 +76,16 @@ public class CardServiceImpl implements CardService {
                 newCard.setId(lastCard.getId());
                 newCard.setParentId(cardsInTemplate.get(cardPosition - 1).getId());
                 cardsInTemplate.add(cardPosition, newCard);
-                for (int i = cardPosition + 1; i < cardsInTemplate.size(); i++) {
-                    Card nextCard = cardsInTemplate.get(i);
-                    nextCard.setId(i + 1);
-                    nextCard.setParentId(i);
-                }
+                switchCardNodes(cardsInTemplate, cardPosition, cardsInTemplate.size());
             }
+        }
+    }
+
+    private void switchCardNodes(LinkedList<Card> cardsInTemplate, int cardPosition, int endPosition) {
+        for (int i = cardPosition + 1; i < endPosition; i++) {
+            Card nextCard = cardsInTemplate.get(i);
+            nextCard.setId(i + 1);
+            nextCard.setParentId(i);
         }
     }
 
