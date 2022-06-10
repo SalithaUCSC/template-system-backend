@@ -12,8 +12,12 @@ import java.util.List;
 @RequestMapping("/api/templates")
 public class TemplateController {
 
+    private final TemplateService templateService;
+
     @Autowired
-    private TemplateService templateService;
+    public TemplateController(TemplateService templateService) {
+        this.templateService = templateService;
+    }
 
     @GetMapping("")
     public ResponseEntity<List<Template>> getAllTemplates() {

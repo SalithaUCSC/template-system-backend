@@ -46,6 +46,8 @@ public class TemplateServiceImpl implements TemplateService {
         Template templateFound = getTemplateById(template.getId());
         if (templateFound != null) {
             templateRepository.save(template);
+        } else {
+            throw new TemplateNotFoundException("Template is Not Found with ID: " + template.getId());
         }
     }
 
