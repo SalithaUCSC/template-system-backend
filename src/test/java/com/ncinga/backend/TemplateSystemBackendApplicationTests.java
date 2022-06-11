@@ -26,22 +26,18 @@ class TemplateSystemBackendApplicationTests {
 
     @MockBean
     private TemplateRepository templateRepository;
-
     @Autowired
     private TemplateService templateService;
-
     private List<Template> allTemplates;
     private Template singleTemplate;
-    private Template updateTemplate;
 
     @BeforeEach
     void setUp() {
         allTemplates = Arrays.asList(
-                Template.builder().title("Template 1").name("template1").description("Description 1").build(),
-                Template.builder().title("Template 2").name("template2").description("Description 2").build()
+            Template.builder().title("Template 1").name("template1").description("Description 1").build(),
+            Template.builder().title("Template 2").name("template2").description("Description 2").build()
         );
         singleTemplate = Template.builder().id("123").title("Template 2").name("template2").description("Description 2").build();
-        updateTemplate = Template.builder().id("456").title("Template 3").name("template3").description("Description 3").build();
     }
 
     @Test
