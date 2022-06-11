@@ -13,12 +13,8 @@ import java.util.List;
 @RequestMapping("/api/templates")
 public class TemplateController {
 
-    private final TemplateService templateService;
-
     @Autowired
-    public TemplateController(TemplateService templateService) {
-        this.templateService = templateService;
-    }
+    private TemplateService templateService;
 
     @GetMapping("")
     public ResponseEntity<List<Template>> getAllTemplates() {

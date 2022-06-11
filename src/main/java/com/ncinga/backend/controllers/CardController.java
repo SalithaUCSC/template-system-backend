@@ -12,12 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/cards")
 public class CardController {
 
-    private final CardService cardService;
-
     @Autowired
-    public CardController(CardService cardService) {
-        this.cardService = cardService;
-    }
+    private CardService cardService;
 
     @PostMapping("/add")
     public ResponseEntity<Card> saveTemplate(@RequestBody CardRequestDTO cardRequest) {
