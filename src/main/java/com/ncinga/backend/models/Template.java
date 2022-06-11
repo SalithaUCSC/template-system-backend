@@ -17,8 +17,8 @@ import java.util.LinkedList;
 public class Template {
     @Id String id;
     @NonNull String name;
-    @NonNull String title;
-    @NonNull String description;
+    String title;
+    String description;
     @Builder.Default
     LinkedList<Card> cards = new LinkedList<>();
 }
