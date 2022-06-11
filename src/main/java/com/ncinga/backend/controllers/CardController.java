@@ -2,15 +2,12 @@ package com.ncinga.backend.controllers;
 
 import com.ncinga.backend.dtos.CardRequestDTO;
 import com.ncinga.backend.models.Card;
-import com.ncinga.backend.models.Template;
 import com.ncinga.backend.services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/cards")
 public class CardController {

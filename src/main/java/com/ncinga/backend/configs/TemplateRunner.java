@@ -17,16 +17,14 @@ public class TemplateRunner implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (templateRepository.findAll().size() > 0) templateRepository.deleteAll();
-        Template t1 = Template.builder().name("template1").description("Template 1")
+        Template t1 = Template.builder().title("Template 1").name("template1").description("Template 1")
                 .build();
-        Template t2 = Template.builder().name("template2").description("Template 2")
+        Template t2 = Template.builder().title("Template 2").name("template2").description("Template 2")
                 .build();
-        Template t3 = Template.builder().name("template3").description("Template 3")
+        Template t3 = Template.builder().title("Template 3").name("template3").description("Template 3")
                 .build();
-        Template t4 = Template.builder().name("template4").description("Template 4")
+        Template t4 = Template.builder().title("Template 4").name("template4").description("Template 4")
                 .build();
-        Template t5 = Template.builder().name("template5").description("Template 5")
-                .build();
-        templateRepository.saveAll(Arrays.asList(t1, t2, t3, t4, t5));
+        templateRepository.saveAll(Arrays.asList(t1, t2, t3, t4));
     }
 }
