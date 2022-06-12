@@ -13,10 +13,10 @@
 6. Please note, when docker mongo instance is restarted, data will be lost - need to fix that.
 
 ### API Documentation
-1. This will give you all the APIs and POJOs exposed in the backend.
-<br/>
-Link: http://localhost:8000/swagger-ui/index.html?configUrl=/workflow-db
-2. If you want, you can use this as the API play ground also, for this backend.
+* This will give you all the APIs and POJOs exposed in the backend.
+Link: ```http://localhost:8000/swagger-ui/index.html?configUrl=/workflow-db```
+* If you want, you can use this as the API play ground also, for this backend.
+
 
 ### Actuator Endpoints
 Links: http://localhost:8000/admin
