@@ -14,7 +14,7 @@
 
 ### API Documentation
 * This will give you all the APIs and POJOs exposed in the backend.
-Link: ```http://localhost:8000/swagger-ui/index.html?configUrl=/workflow-db```
+Link: http://localhost:8000/swagger-ui/index.html?configUrl=/workflow-db
 * If you want, you can use this as the API play ground also, for this backend.
 
 
