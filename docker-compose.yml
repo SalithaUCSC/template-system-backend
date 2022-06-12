@@ -11,5 +11,5 @@ services:
     container_name: "template-system-backend"
     ports:
       - 8000:8080
-    links:
-      - docker-mongo
+    depends_on:
+      - mongodb
