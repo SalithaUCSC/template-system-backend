@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  docker-mongo:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports:
+      - 27070:27017
+    command: mongod --port 27070
+  template-system-backend:
+    image: template-system-backend:1.0.0
+    container_name: "template-system-backend"
+    ports:
+      - 8000:8080
+    links:
+      - docker-mongo
